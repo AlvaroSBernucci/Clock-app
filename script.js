@@ -22,7 +22,7 @@ function initGeolocation(){
   }
   async function fetchLocation(query){
     const accessKey ='1c4c47fbd2504676d619c14ab3f4a53f';
-    const url = `http://api.positionstack.com/v1/reverse?access_key=${accessKey}&query=${query}&timezone_module=1&country_module=1`
+    const url = `https://api.positionstack.com/v1/reverse?access_key=${accessKey}&query=${query}&timezone_module=1&country_module=1`
     const locationData = await fetch(url);
     const locationJSON = await locationData.json();
     const timeZone = locationJSON.data[0].timezone_module.name;
@@ -33,7 +33,7 @@ function initGeolocation(){
   
 
 async function fetchTime(pais,cidade,timeZone){
-  const timeData = await fetch(`http://worldtimeapi.org/api/${timeZone}`);
+  const timeData = await fetch(`https://worldtimeapi.org/api/${timeZone}`);
   const dataJSON = await timeData.json();
   const detailInfos = [dataJSON.timezone.replace('_', ' '),dataJSON.day_of_week,dataJSON.day_of_year,dataJSON.week_number];
   const date = new Date(dataJSON.datetime);
@@ -58,6 +58,8 @@ function trocarInformacoes(pais,cidade,hora,horario,detailInfos){
     dynamicBG.classList.toggle('night');
     detailBG.classList.toggle('night');
     frase.innerText = 'EVENING'
+  } else if (hora >= 12){
+    frase.innerText = 'AFTERNOON'
   }
   hour.innerText = horario;
   location.innerText = `in ${cidade}, ${pais}`
@@ -74,6 +76,14 @@ function handleClick(event){
   const blockquote = document.querySelector('blockquote');
   blockquote.classList.toggle('ativo');
   detailBG.classList.toggle('ativo');
+  btnText(event.target);
+}
+
+function btnText(element){
+  const oldValue = element.innerText;
+  const newValue = element.dataset.btntxt;
+  element.innerText = newValue;
+  element.dataset.btntxt = oldValue;
 }
 
 btn.addEventListener('click',handleClick)

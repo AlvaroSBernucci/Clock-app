@@ -51,6 +51,7 @@ button{
   gap: 13px;
   text-decoration: none;
   cursor: pointer;
+  text-transform: uppercase;
 }
 button::after{
   content: '';
