@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./details.css">
+
+  <title>Frontend Mentor | Clock App</title>
+</head>
+
+
+<body>
+  <div id="loader" class="loader-detail">
+    <span style="--i:1">L</span>
+    <span style="--i:2">o</span>
+    <span style="--i:3">a</span>
+    <span style="--i:4">d</span>
+    <span style="--i:5">i</span>
+    <span style="--i:6">n</span>
+    <span style="--i:7">g</span>
+    <span style="--i:8">.</span>
+  </div>
+  <div class="dynamic-bg detail">
+    <section class="container detail">
+      <div class="locations-grid">
+        <div class="locations detail">
+          <div class="current-phrase">
+            <img src="./assets/desktop/icon-sun.svg" alt="">
+            <p>GOOD <span id="frase">MORNING</span>, it's currently</p>
+          </div>
+          <p id="hour">11:37</p>
+          <p id="location">in LONDON, UK</p>
+        </div>
+        <a href="./index.html" class="btn-detail">LESS</a>
+      </div>
+
+    </section>
+    <section class="detail-bg">
+      <ul class="detail-infos container">
+        <li>
+          <h6>CURRENT TIMEZONE</h6>
+          <h2>EUROPE/LONDON</h2>
+        </li>
+        <li>
+          <h6>DAY OF THE WEEK</h6>
+          <h2>5</h2>
+        </li>
+        <li>
+          <h6>DAY OF THE YEAR</h6>
+          <h2>295</h2>
+        </li>
+        <li>
+          <h6>WEEK NUMBER</h6>
+          <h2>42</h2>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
